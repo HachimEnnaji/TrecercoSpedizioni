@@ -1,0 +1,47 @@
+﻿@model IEnumerable<TrecercoSpedizioni.Models.Cliente>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista Clienti</h1>
+
+<p>
+    <a asp-action="Create" asp-controller="Cliente">Nuovo Cliente</a>
+</p>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Codice Fiscale
+            </th>
+            <th>
+                Partita Iva
+            </th>
+            <th>
+                Nome
+            </th>
+            <th>
+                Tipo Cliente
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>@obj.id</td>
+                <td class="text-uppercase">@obj.CodiceFiscale</td>
+                <td class="text-uppercase">@obj.PartitaIva</td>
+                <td>@obj.Nome</td>
+                <td class="text-capitalize">@obj.TipoCliente</td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Cliente" asp-route-id="@obj.id">Modifica</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
