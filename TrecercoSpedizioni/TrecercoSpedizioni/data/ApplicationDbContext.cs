@@ -9,5 +9,8 @@ namespace TrecercoSpedizioni.data
         {
         }
         public DbSet<Cliente> Clienti { get; set; }
+        public DbSet<Spedizioni> Spedizioni { get; set; }
+        public DbSet<DettagliSpedizioni> DettagliSpedizioni { get; set; }
     }
+
 }
